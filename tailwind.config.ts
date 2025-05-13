@@ -36,6 +36,11 @@ export default {
   				DEFAULT: 'hsl(var(--accent))',
   				foreground: 'hsl(var(--accent-foreground))'
   			},
+        highlight: { // General highlight color, can be overridden by specific like green
+          DEFAULT: 'hsl(var(--accent))', // Default to accent
+          foreground: 'hsl(var(--accent-foreground))'
+        },
+        'highlight-green': 'hsl(var(--highlight-green-hsl))',
   			destructive: {
   				DEFAULT: 'hsl(var(--destructive))',
   				foreground: 'hsl(var(--destructive-foreground))'
@@ -90,5 +95,5 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require('@tailwindcss/aspect-ratio')],
 } satisfies Config;

@@ -5,90 +5,98 @@
 @layer base {
   :root {
     --background: 0 0% 100%; /* White */
-    --foreground: 20 30% 25%; /* Dark Warm Gray - User's original */
+    --foreground: 220 25% 10%; /* Dark Blue-Gray for strong contrast */
     --card: 0 0% 100%; /* White */
-    --card-foreground: 20 30% 25%;
+    --card-foreground: 220 25% 15%; 
     --popover: 0 0% 100%;
-    --popover-foreground: 20 30% 25%;
+    --popover-foreground: 220 25% 15%;
     
-    --primary: 195 85% 45%; /* Vibrant Cerulean Blue - User's existing */
-    --primary-foreground: 0 0% 100%; /* White - User's existing */
-    --secondary: 30 90% 60%; /* Bright Orange - User's existing */
-    --secondary-foreground: 30 90% 10%; /* Dark Brown for contrast - User's existing */
+    --primary: 210 90% 50%; /* Brighter, more vibrant Blue */
+    --primary-foreground: 0 0% 100%; /* White */
     
-    --muted: 220 15% 96.1%; /* Light Cool Gray */
-    --muted-foreground: 220 10% 46.9%; /* Muted Cool Gray */
+    --secondary: 210 15% 90%; /* Light Blue-Gray */
+    --secondary-foreground: 210 25% 25%; /* Darker Blue-Gray for contrast on secondary */
     
-    --accent: 330 80% 60%; /* Lively Pink/Rose - User's existing */
-    --accent-foreground: 0 0% 100%; /* White - User's existing */
+    --muted: 210 20% 96%; /* Very Light Blue-Gray */
+    --muted-foreground: 210 15% 45%; /* Muted Blue-Gray */
     
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --accent: 145 63% 42%; /* Vibrant Green #32CD32 */
+    --accent-foreground: 0 0% 100%; /* White for contrast on green */
     
-    --border: 220 15% 88%; /* Cool Gray Border */
-    --input: 220 15% 93%; /* Slightly darker cool gray for input */
-    --ring: 195 85% 50%; /* Cerulean Blue for focus rings - User's existing */
+    --destructive: 0 84.2% 60.2%; /* Standard Red */
+    --destructive-foreground: 0 0% 98%; /* Light text on red */
     
-    --chart-1: 195 85% 55%;
-    --chart-2: 330 80% 65%;
-    --chart-3: 50 95% 60%;
-    --chart-4: 140 60% 50%;
-    --chart-5: 270 70% 65%;
+    --border: 210 15% 85%; /* Cool Gray Border */
+    --input: 210 15% 92%; /* Slightly darker cool gray for input */
+    --ring: 210 90% 55%; /* Brighter Blue for focus rings */
+    
+    --chart-1: 210 85% 55%;
+    --chart-2: 145 60% 50%; /* Green for charts */
+    --chart-3: 50 95% 60%; /* Yellow/Orange */
+    --chart-4: 30 90% 60%; /* Orange */
+    --chart-5: 270 70% 65%; /* Purple */
     
     --radius: 0.5rem;
 
     /* Sidebar variables */
-    --sidebar-background: 0 0% 98%; /* Very light gray, almost white */
-    --sidebar-foreground: 20 30% 25%; 
-    --sidebar-primary: 195 85% 45%; 
+    --sidebar-background: 210 20% 98%; /* Very light blue-gray */
+    --sidebar-foreground: 220 25% 10%; 
+    --sidebar-primary: 210 90% 50%; 
     --sidebar-primary-foreground: 0 0% 100%; 
-    --sidebar-accent: 330 80% 60%; 
+    --sidebar-accent: 145 63% 42%; 
     --sidebar-accent-foreground: 0 0% 100%; 
-    --sidebar-border: 220 15% 85%; 
-    --sidebar-ring: 195 85% 50%; 
+    --sidebar-border: 210 15% 80%; 
+    --sidebar-ring: 210 90% 55%; 
+
+    --highlight-green-hsl: 145 63% 42%; /* HSL for #32CD32 */
+    --highlight-green: hsl(var(--highlight-green-hsl));
   }
 
   .dark {
-    --background: 220 20% 10%; /* Dark Slate Blue/Gray - User's existing */
-    --foreground: 30 30% 90%; /* Light Warm Gray text - User's existing */
-    --card: 220 20% 14%; /* Darker card - User's existing */
-    --card-foreground: 30 30% 90%;
-    --popover: 220 20% 14%;
-    --popover-foreground: 30 30% 90%;
+    --background: 220 15% 8%; /* Very Dark Blue-Gray */
+    --foreground: 210 30% 92%; /* Light Cool Gray text */
+    --card: 220 15% 12%; /* Darker card */
+    --card-foreground: 210 30% 92%;
+    --popover: 220 15% 12%;
+    --popover-foreground: 210 30% 92%;
 
-    --primary: 195 80% 65%; /* Lighter Cerulean Blue - User's existing */
-    --primary-foreground: 195 80% 10%; /* Dark Blue for contrast - User's existing */
-    --secondary: 30 85% 70%; /* Softer Orange - User's existing */
-    --secondary-foreground: 30 85% 15%; /* Darker Orange/Brown for contrast - User's existing */
+    --primary: 210 85% 65%; /* Lighter, vibrant Blue */
+    --primary-foreground: 210 85% 10%; /* Dark Blue for contrast */
+    
+    --secondary: 220 15% 20%; /* Dark Blue-Gray */
+    --secondary-foreground: 210 30% 85%; /* Lighter Cool Gray for contrast */
 
-    --muted: 220 15% 22%; /* Darker muted blue-gray - User's existing */
-    --muted-foreground: 30 15% 65%; /* Muted light warm gray - User's existing */
+    --muted: 220 15% 18%; /* Darker muted blue-gray */
+    --muted-foreground: 210 15% 60%; /* Muted light cool gray */
     
-    --accent: 330 75% 70%; /* Lighter Pink/Rose - User's existing */
-    --accent-foreground: 330 75% 15%; /* Dark Pink/Rose for contrast - User's existing */
+    --accent: 145 55% 55%; /* Vibrant Green for dark mode */
+    --accent-foreground: 0 0% 100%; /* White for contrast */
     
-    --destructive: 0 70% 50%;
+    --destructive: 0 70% 55%; /* Dark mode Red */
     --destructive-foreground: 0 0% 98%;
     
-    --border: 220 15% 25%; /* Darker border - User's existing */
-    --input: 220 15% 18%;  /* Darker input - User's existing */
-    --ring: 195 80% 65%; /* Lighter Cerulean Blue for focus rings - User's existing */
+    --border: 220 15% 22%; /* Darker border */
+    --input: 220 15% 16%;  /* Darker input */
+    --ring: 210 85% 65%; /* Lighter Blue for focus rings */
 
-    --chart-1: 195 80% 70%; 
-    --chart-2: 330 75% 75%;
+    --chart-1: 210 80% 70%; 
+    --chart-2: 145 55% 60%; /* Green for charts */
     --chart-3: 50 90% 70%;
-    --chart-4: 140 55% 60%;
+    --chart-4: 30 85% 70%;
     --chart-5: 270 65% 75%;
 
     /* Sidebar variables for dark mode */
-    --sidebar-background: 220 20% 12%; 
-    --sidebar-foreground: 30 30% 88%; 
-    --sidebar-primary: 195 80% 65%; 
-    --sidebar-primary-foreground: 195 80% 10%; 
-    --sidebar-accent: 330 75% 70%; 
-    --sidebar-accent-foreground: 330 75% 15%; 
-    --sidebar-border: 220 15% 20%; 
-    --sidebar-ring: 195 80% 65%; 
+    --sidebar-background: 220 15% 10%; 
+    --sidebar-foreground: 210 30% 90%; 
+    --sidebar-primary: 210 85% 65%; 
+    --sidebar-primary-foreground: 210 85% 10%; 
+    --sidebar-accent: 145 55% 55%; 
+    --sidebar-accent-foreground: 0 0% 100%; 
+    --sidebar-border: 220 15% 18%; 
+    --sidebar-ring: 210 85% 65%; 
+
+    --highlight-green-hsl: 145 55% 55%; /* Lighter Green for dark mode */
+    --highlight-green: hsl(var(--highlight-green-hsl));
   }
 }
 
