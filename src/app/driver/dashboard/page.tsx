@@ -5,6 +5,7 @@ import { LogIn, UserCircle, Briefcase, CircleDollarSign, Power, Bell, MessageCir
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge"; // Added import for Badge
 
 export default function DriverDashboardPage() {
   const features = [
@@ -244,3 +245,4 @@ export default function DriverDashboardPage() {
     </div>
   );
 }
+
