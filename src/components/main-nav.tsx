@@ -1,15 +1,17 @@
+
 'use client';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { CarFront, Calculator, History, LayoutDashboard, UserCircle } from 'lucide-react';
+import { CarFront, Calculator, History, LayoutDashboard, UserCircle, CheckCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
   { href: '/', label: 'Ride Booking', icon: CarFront },
   { href: '/fare-estimate', label: 'Fare Estimate', icon: Calculator },
   { href: '/ride-history', label: 'Ride History', icon: History },
+  { href: '/ride-confirmation', label: 'Ride Confirmation', icon: CheckCircle },
   { href: '/admin/dashboard', label: 'Admin', icon: LayoutDashboard },
   { href: '/driver/dashboard', label: 'Driver UI', icon: UserCircle },
 ];
@@ -22,7 +24,7 @@ export function MainNav() {
   return (
     <nav className="sticky top-16 z-30 w-full border-b bg-background shadow-sm">
       <Tabs value={activeTab} className="w-full">
-        <TabsList className="grid w-full grid-cols-3 sm:grid-cols-5 rounded-none h-auto p-0">
+        <TabsList className="grid w-full grid-cols-3 sm:grid-cols-6 rounded-none h-auto p-0">
           {navItems.map((item) => (
             <TabsTrigger
               key={item.href}
@@ -45,3 +47,4 @@ export function MainNav() {
     </nav>
   );
 }
+
