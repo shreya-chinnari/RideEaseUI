@@ -4,81 +4,81 @@
 
 @layer base {
   :root {
-    --background: 220 30% 97%; /* Very light cool gray */
-    --foreground: 220 15% 25%; /* Dark cool gray */
-    --card: 220 30% 95%; /* Slightly darker card */
-    --card-foreground: 220 15% 25%;
-    --popover: 220 30% 95%;
-    --popover-foreground: 220 15% 25%;
-    --primary: 255 65% 58%; /* Vibrant Indigo/Purple */
+    --background: 30 100% 98%; /* Very Light Peach */
+    --foreground: 20 30% 25%; /* Dark Warm Gray */
+    --card: 30 80% 96%; /* Light Peach */
+    --card-foreground: 20 30% 25%;
+    --popover: 30 80% 96%;
+    --popover-foreground: 20 30% 25%;
+    --primary: 195 85% 45%; /* Vibrant Cerulean Blue */
     --primary-foreground: 0 0% 100%; /* White */
-    --secondary: 205 75% 55%; /* Bright Sky Blue */
-    --secondary-foreground: 205 100% 97%; /* Very Light Blue/White for text on secondary */
-    --muted: 220 25% 92%; /* Lighter cool gray for muted */
-    --muted-foreground: 220 10% 50%; /* Muted cool gray text */
-    --accent: 130 60% 50%; /* Vibrant Green */
-    --accent-foreground: 0 0% 100%; /* White text on accent */
+    --secondary: 30 90% 60%; /* Bright Orange */
+    --secondary-foreground: 30 90% 10%; /* Dark Brown for contrast */
+    --muted: 30 30% 93%; /* Lighter Peach Gray */
+    --muted-foreground: 30 15% 50%; /* Muted Warm Gray */
+    --accent: 330 80% 60%; /* Lively Pink/Rose */
+    --accent-foreground: 0 0% 100%; /* White */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 20% 88%; /* Soft cool gray border */
-    --input: 220 30% 96%; /* Slightly off from background for inputs */
-    --ring: 130 60% 55%; /* Green for focus rings (slightly lighter accent) */
+    --border: 30 30% 88%; /* Soft Peach Gray Border */
+    --input: 30 50% 97%; /* Slightly off from background for inputs */
+    --ring: 195 85% 50%; /* Cerulean Blue for focus rings */
     
-    --chart-1: 255 65% 65%; /* Lighter Indigo/Purple */
-    --chart-2: 130 60% 55%;  /* Vibrant Green */
-    --chart-3: 205 75% 60%; /* Lighter Sky Blue */
-    --chart-4: 35 90% 60%;  /* Bright Orange */
-    --chart-5: 320 70% 65%;  /* Vibrant Pink */
+    --chart-1: 195 85% 55%; /* Lighter Cerulean Blue */
+    --chart-2: 330 80% 65%;  /* Lighter Pink/Rose */
+    --chart-3: 50 95% 60%;  /* Bright Yellow */
+    --chart-4: 140 60% 50%; /* Emerald Green */
+    --chart-5: 270 70% 65%;  /* Soft Purple */
     
     --radius: 0.5rem;
 
     /* Sidebar variables */
-    --sidebar-background: 220 30% 95%; /* Mirror card for sidebar */
-    --sidebar-foreground: 220 15% 25%; /* Mirror card-foreground */
-    --sidebar-primary: 255 65% 58%; /* Mirror primary */
-    --sidebar-primary-foreground: 0 0% 100%; /* Mirror primary-foreground */
-    --sidebar-accent: 130 60% 50%; /* Mirror accent */
-    --sidebar-accent-foreground: 0 0% 100%; /* Mirror accent-foreground */
-    --sidebar-border: 220 20% 85%; /* Slightly different border for sidebar if needed */
-    --sidebar-ring: 130 60% 55%; /* Mirror ring */
+    --sidebar-background: 30 80% 95%; /* Light Peach (slightly adjusted from card for potential distinction) */
+    --sidebar-foreground: 20 30% 25%; 
+    --sidebar-primary: 195 85% 45%; 
+    --sidebar-primary-foreground: 0 0% 100%; 
+    --sidebar-accent: 330 80% 60%; 
+    --sidebar-accent-foreground: 0 0% 100%; 
+    --sidebar-border: 30 30% 85%; 
+    --sidebar-ring: 195 85% 50%; 
   }
 
   .dark {
     --background: 220 20% 10%; /* Dark Slate Blue/Gray */
-    --foreground: 220 25% 90%; /* Light cool gray text */
+    --foreground: 30 30% 90%; /* Light Warm Gray text */
     --card: 220 20% 14%; /* Darker card */
-    --card-foreground: 220 25% 90%;
+    --card-foreground: 30 30% 90%;
     --popover: 220 20% 14%;
-    --popover-foreground: 220 25% 90%;
-    --primary: 255 65% 68%; /* Lighter Indigo/Purple */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 205 70% 50%; /* Still vibrant Sky Blue, adjusted for dark */
-    --secondary-foreground: 205 100% 95%;
+    --popover-foreground: 30 30% 90%;
+    --primary: 195 80% 65%; /* Lighter Cerulean Blue */
+    --primary-foreground: 195 80% 10%; /* Dark Blue for contrast */
+    --secondary: 30 85% 70%; /* Softer Orange */
+    --secondary-foreground: 30 85% 15%; /* Darker Orange/Brown for contrast */
     --muted: 220 15% 22%; /* Darker muted blue-gray */
-    --muted-foreground: 220 15% 65%;
-    --accent: 130 60% 60%; /* Lighter Vibrant Green */
-    --accent-foreground: 130 100% 10%; /* Dark Green text for contrast */
+    --muted-foreground: 30 15% 65%; /* Muted light warm gray */
+    --accent: 330 75% 70%; /* Lighter Pink/Rose */
+    --accent-foreground: 330 75% 15%; /* Dark Pink/Rose for contrast */
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 98%;
     --border: 220 15% 25%; /* Darker border */
     --input: 220 15% 18%;  /* Darker input */
-    --ring: 130 60% 60%; /* Green for focus rings */
+    --ring: 195 80% 65%; /* Lighter Cerulean Blue for focus rings */
 
-    --chart-1: 255 65% 75%; 
-    --chart-2: 130 60% 65%;
-    --chart-3: 205 75% 70%;
-    --chart-4: 35 90% 70%;
-    --chart-5: 320 70% 75%;
+    --chart-1: 195 80% 70%; 
+    --chart-2: 330 75% 75%;
+    --chart-3: 50 90% 70%;
+    --chart-4: 140 55% 60%;
+    --chart-5: 270 65% 75%;
 
     /* Sidebar variables for dark mode */
-    --sidebar-background: 220 20% 12%; /* Slightly lighter than main dark background */
-    --sidebar-foreground: 220 25% 88%; 
-    --sidebar-primary: 255 65% 68%; 
-    --sidebar-primary-foreground: 0 0% 100%; 
-    --sidebar-accent: 130 60% 60%; 
-    --sidebar-accent-foreground: 130 100% 10%; 
+    --sidebar-background: 220 20% 12%; 
+    --sidebar-foreground: 30 30% 88%; 
+    --sidebar-primary: 195 80% 65%; 
+    --sidebar-primary-foreground: 195 80% 10%; 
+    --sidebar-accent: 330 75% 70%; 
+    --sidebar-accent-foreground: 330 75% 15%; 
     --sidebar-border: 220 15% 20%; 
-    --sidebar-ring: 130 60% 60%; 
+    --sidebar-ring: 195 80% 65%; 
   }
 }
 
