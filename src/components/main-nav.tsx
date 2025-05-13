@@ -29,7 +29,7 @@ export function MainNav() {
               value={item.href}
               asChild
               className={cn(
-                "data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:text-primary rounded-none py-3 px-1 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1",
+                "data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-accent data-[state=active]:text-accent rounded-none py-3 px-1 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1",
                 "text-muted-foreground hover:text-primary transition-colors duration-150 ease-in-out"
               )}
               aria-label={item.label}

@@ -14,7 +14,7 @@ export default function AdminDashboardPage() {
         <div className="space-y-4">
           <Card className="bg-card/50">
             <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2"><ListChecks className="h-5 w-5"/>User List & Actions</CardTitle>
+              <CardTitle className="text-lg flex items-center gap-2"><ListChecks className="h-5 w-5 text-accent"/>User List & Actions</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">
@@ -33,7 +33,7 @@ export default function AdminDashboardPage() {
           </Card>
           <Card className="bg-card/50">
             <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2"><ShieldCheck className="h-5 w-5"/>Role-Based Access Control</CardTitle>
+              <CardTitle className="text-lg flex items-center gap-2"><ShieldCheck className="h-5 w-5 text-accent"/>Role-Based Access Control</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">
@@ -55,14 +55,14 @@ export default function AdminDashboardPage() {
       content: (
         <div className="space-y-4">
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg">Driver Applications</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg text-foreground">Driver Applications</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Review and approve/reject new driver applications.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">[Placeholder: List of Pending Applications with 'Approve'/'Reject' buttons]</div>
             </CardContent>
           </Card>
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg">Driver Overview</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg text-foreground">Driver Overview</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">View profiles, documents, real-time status, and ratings.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">[Placeholder: Table/Grid of Drivers with Status Indicators and Rating Display]</div>
@@ -77,14 +77,14 @@ export default function AdminDashboardPage() {
       content: (
          <div className="space-y-4">
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg">Vehicle Inventory</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg text-foreground">Vehicle Inventory</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Grid or table view of all vehicles. Add, edit, and assign vehicles to drivers.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">[Placeholder: Vehicle Grid with Images, Details, and 'Add/Edit Vehicle' Modals]</div>
             </CardContent>
           </Card>
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg">Maintenance & Expiry Tracking</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg text-foreground">Maintenance & Expiry Tracking</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Track registration, insurance expiry dates with alerts.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">[Placeholder: Calendar/List View for Expiry Dates, Notification Settings]</div>
@@ -99,14 +99,14 @@ export default function AdminDashboardPage() {
       content: (
         <div className="space-y-4">
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><Map className="h-5 w-5"/>Live Trip Monitoring</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><Map className="h-5 w-5 text-accent"/>Live Trip Monitoring</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">View all active trips on a map, assign/reassign drivers.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border h-24">[Placeholder: Interactive Map Displaying Active Trips and Driver Locations]</div>
             </CardContent>
           </Card>
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><ListChecks className="h-5 w-5"/>Trip History & Logs</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><ListChecks className="h-5 w-5 text-accent"/>Trip History & Logs</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Table of trips (active, completed, cancelled) with detailed logs.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">[Placeholder: Data Table for Trip History with Filters and Search]</div>
@@ -121,7 +121,7 @@ export default function AdminDashboardPage() {
       content: (
         <div className="space-y-4">
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg">KPI Dashboard</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg text-foreground">KPI Dashboard</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Visual dashboard with key performance indicators.</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -133,7 +133,7 @@ export default function AdminDashboardPage() {
             </CardContent>
           </Card>
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><Download className="h-5 w-5"/>Downloadable Reports</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><Download className="h-5 w-5 text-accent"/>Downloadable Reports</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Generate and download reports in CSV/PDF format with custom date filters.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">[Placeholder: Report Generation Form with Date Pickers and Format Selection]</div>
@@ -148,14 +148,14 @@ export default function AdminDashboardPage() {
       content: (
         <div className="space-y-4">
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><DollarSign className="h-5 w-5"/>Driver Earnings</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><DollarSign className="h-5 w-5 text-accent"/>Driver Earnings</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">View driver earnings summaries and initiate payouts.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">[Placeholder: Table of Driver Balances, Payout Initiation Form]</div>
             </CardContent>
           </Card>
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><History className="h-5 w-5"/>Transaction History</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><History className="h-5 w-5 text-accent"/>Transaction History</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Detailed log of all payment transactions.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">[Placeholder: Transaction History Table with Filters]</div>
@@ -170,14 +170,14 @@ export default function AdminDashboardPage() {
       content: (
         <div className="space-y-4">
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg">Send Announcements</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg text-foreground">Send Announcements</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Compose and send announcements via SMS, email, or in-app notifications.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">[Placeholder: Rich Text Editor for Announcements, Audience Selection (Drivers/Customers/All)]</div>
             </CardContent>
           </Card>
            <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg">System Alerts</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg text-foreground">System Alerts</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Monitor and manage system alerts (e.g., failed payments, critical driver issues).</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">[Placeholder: List of System Alerts with Severity and Status]</div>
@@ -192,14 +192,14 @@ export default function AdminDashboardPage() {
       content: (
         <div className="space-y-4">
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><MessageCircle className="h-5 w-5"/>Chat System</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><MessageCircle className="h-5 w-5 text-accent"/>Chat System</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Integrated chat to communicate with drivers and customers.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border h-20">[Placeholder: Live Chat Interface Mockup]</div>
             </CardContent>
           </Card>
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><Ticket className="h-5 w-5"/>Ticketing System</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><Ticket className="h-5 w-5 text-accent"/>Ticketing System</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Manage and resolve support tickets raised by users.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">[Placeholder: Table of Support Tickets with Status, Priority, and Assignee]</div>
@@ -214,14 +214,14 @@ export default function AdminDashboardPage() {
       content: (
         <div className="space-y-4">
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg">Pricing & Policies</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg text-foreground">Pricing & Policies</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Configure pricing, rates per zone, commissions, cancellation policies, and peak hours.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">[Placeholder: Forms for various settings - e.g., Price per KM, Commission Percentage]</div>
             </CardContent>
           </Card>
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><MapPin className="h-5 w-5"/>Geofencing</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><MapPin className="h-5 w-5 text-accent"/>Geofencing</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Define and manage geofenced areas/zones for service or pricing.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border h-20">[Placeholder: Map-based Geofencing Tool]</div>
@@ -236,7 +236,7 @@ export default function AdminDashboardPage() {
       content: (
         <div className="space-y-4">
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><ListTree className="h-5 w-5"/>Activity Tracking</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><ListTree className="h-5 w-5 text-accent"/>Activity Tracking</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Track admin actions, logins, and important changes in the system.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">[Placeholder: Table of Audit Logs - Timestamp, User, Action, Details. With search and filters.]</div>
@@ -251,7 +251,7 @@ export default function AdminDashboardPage() {
     <div className="container mx-auto px-4 py-8">
       <Card className="w-full shadow-xl mb-8 bg-card">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-primary">Admin Dashboard</CardTitle>
+          <CardTitle className="text-3xl font-bold text-foreground">Admin Dashboard</CardTitle>
           <CardDescription>Manage all aspects of the RideEase platform.</CardDescription>
         </CardHeader>
       </Card>
@@ -263,7 +263,7 @@ export default function AdminDashboardPage() {
               <AccordionTrigger className="p-6 hover:no-underline">
                 <div className="flex items-center gap-3">
                   {feature.icon}
-                  <span className="text-xl font-semibold text-primary">{feature.title}</span>
+                  <span className="text-xl font-semibold text-foreground">{feature.title}</span>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="p-6 pt-0">

@@ -15,8 +15,8 @@ export function RideHistoryItem({ ride }: RideHistoryItemProps) {
       <CardHeader>
         <div className="flex justify-between items-start">
           <div>
-            <CardTitle className="text-xl text-primary flex items-center gap-2">
-              <MapPin className="h-5 w-5" /> To: {ride.destination}
+            <CardTitle className="text-xl text-foreground flex items-center gap-2">
+              <MapPin className="h-5 w-5 text-primary" /> To: {ride.destination}
             </CardTitle>
             <CardDescription className="flex items-center gap-2 mt-1">
               <MapPin className="h-4 w-4 text-muted-foreground" /> From: {ride.pickup}

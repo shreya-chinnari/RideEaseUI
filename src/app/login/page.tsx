@@ -84,7 +84,7 @@ export default function LoginPage() {
             className="object-cover rounded-full mx-auto mb-4 shadow-md"
             data-ai-hint="security lock"
           />
-          <CardTitle className="text-3xl font-bold text-primary">
+          <CardTitle className="text-3xl font-bold text-foreground">
             {otpSent ? 'Verify OTP' : 'Login to RideEase'}
           </CardTitle>
           <CardDescription>
@@ -136,7 +136,7 @@ export default function LoginPage() {
                 <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-6 shadow-md active:scale-95" disabled={isLoading}>
                   {isLoading ? 'Verifying...' : 'Verify OTP & Login'}
                 </Button>
-                <Button variant="link" onClick={() => { setOtpSent(false); loginForm.reset(); otpForm.reset();}} className="w-full text-primary">
+                <Button variant="link" onClick={() => { setOtpSent(false); loginForm.reset(); otpForm.reset();}} className="w-full text-accent hover:text-accent/90">
                   Change phone number
                 </Button>
               </form>

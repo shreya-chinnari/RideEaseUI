@@ -16,7 +16,7 @@ export default function RideHistoryPage() {
     <div className="flex flex-col items-center space-y-8">
       <Card className="w-full max-w-2xl shadow-xl">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-primary">Your Ride History</CardTitle>
+          <CardTitle className="text-3xl font-bold text-foreground">Your Ride History</CardTitle>
           <CardDescription>Review your past journeys with RideEase.</CardDescription>
         </CardHeader>
         <CardContent>

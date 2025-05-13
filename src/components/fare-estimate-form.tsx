@@ -128,11 +128,11 @@ export default function FareEstimateForm() {
           {isLoading ? 'Estimating...' : 'Estimate Fare'}
         </Button>
         {estimatedFare !== null && (
-          <div className="mt-6 p-4 bg-secondary rounded-lg text-center shadow">
-            <h3 className="text-lg font-semibold flex items-center justify-center gap-2">
+          <div className="mt-6 p-4 bg-secondary/20 rounded-lg text-center shadow">
+            <h3 className="text-lg font-semibold flex items-center justify-center gap-2 text-foreground">
               <DollarSign className="h-6 w-6 text-primary" /> Estimated Fare
             </h3>
-            <p className="text-3xl font-bold text-primary">₹{estimatedFare}</p>
+            <p className="text-3xl font-bold text-accent">₹{estimatedFare}</p>
             <p className="text-sm text-muted-foreground">This is an estimate. Actual fare may vary.</p>
           </div>
         )}

@@ -5,17 +5,17 @@ import { LogIn, UserCircle, Briefcase, CircleDollarSign, Power, Bell, MessageCir
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/badge"; // Added import for Badge
+import { Badge } from "@/components/ui/badge";
 
 export default function DriverDashboardPage() {
   const features = [
     { 
       title: "Login & Profile Management", 
-      icon: <UserCircle className="h-5 w-5 text-primary" />, // Changed from LogIn for better context
+      icon: <UserCircle className="h-5 w-5 text-primary" />, 
       content: (
         <div className="space-y-4">
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg">Personal Information</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg text-foreground">Personal Information</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">View and edit your personal details.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">
@@ -26,7 +26,7 @@ export default function DriverDashboardPage() {
             </CardContent>
           </Card>
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><FileText className="h-5 w-5"/>Documents</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><FileText className="h-5 w-5 text-accent"/>Documents</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Upload and manage your license, insurance, and other required documents.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">
@@ -44,7 +44,7 @@ export default function DriverDashboardPage() {
       content: (
         <div className="space-y-4">
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg">Trip Requests & Current Trip</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg text-foreground">Trip Requests & Current Trip</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">View incoming trip requests and details of your ongoing trip.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">
@@ -56,14 +56,14 @@ export default function DriverDashboardPage() {
             </CardContent>
           </Card>
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><ListChecks className="h-5 w-5"/>Trip History</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><ListChecks className="h-5 w-5 text-accent"/>Trip History</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Access your past trip details.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">[Placeholder: List/Table of Past Trips with Date, Route, Fare]</div>
             </CardContent>
           </Card>
            <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><MapIcon className="h-5 w-5"/>Route Map & Navigation</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><MapIcon className="h-5 w-5 text-accent"/>Route Map & Navigation</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Integrated map for viewing routes and turn-by-turn navigation for current trip.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border h-24">[Placeholder: Embedded Map View (e.g., Google Maps/Mapbox)]</div>
@@ -78,27 +78,27 @@ export default function DriverDashboardPage() {
       content: (
         <div className="space-y-4">
            <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg">Earnings Overview</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg text-foreground">Earnings Overview</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Track your daily, weekly, and monthly earnings.</p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="p-3 bg-muted/30 rounded-md text-xs border text-center">
                   <p className="font-semibold">Today's Earnings</p>
-                  <p className="text-lg text-primary">₹XXX.XX</p>
+                  <p className="text-lg text-accent">₹XXX.XX</p>
                 </div>
                 <div className="p-3 bg-muted/30 rounded-md text-xs border text-center">
                   <p className="font-semibold">This Week</p>
-                  <p className="text-lg text-primary">₹XXXX.XX</p>
+                  <p className="text-lg text-accent">₹XXXX.XX</p>
                 </div>
                 <div className="p-3 bg-muted/30 rounded-md text-xs border text-center">
                   <p className="font-semibold">This Month</p>
-                  <p className="text-lg text-primary">₹XXXXX.XX</p>
+                  <p className="text-lg text-accent">₹XXXXX.XX</p>
                 </div>
               </div>
             </CardContent>
           </Card>
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg">Trip-wise Breakdown</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg text-foreground">Trip-wise Breakdown</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Detailed breakdown of earnings from each trip, including bonuses and incentives.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">[Placeholder: Table/List of Trips with Earnings, Base Fare, Bonus, Deductions]</div>
@@ -115,7 +115,7 @@ export default function DriverDashboardPage() {
           <Card className="bg-card/50">
             <CardContent className="pt-6">
               <div className="flex items-center justify-between">
-                <Label htmlFor="availability-toggle" className="text-lg font-semibold">
+                <Label htmlFor="availability-toggle" className="text-lg font-semibold text-foreground">
                   Go Online / Offline
                 </Label>
                 <Switch id="availability-toggle" className="data-[state=checked]:bg-green-500" />
@@ -124,7 +124,7 @@ export default function DriverDashboardPage() {
             </CardContent>
           </Card>
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg">Schedule Shifts (Optional)</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg text-foreground">Schedule Shifts (Optional)</CardTitle></CardHeader>
             <CardContent>
                <p className="text-sm text-muted-foreground mb-2">If applicable, manage your pre-scheduled work shifts.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">[Placeholder: Calendar View for Shift Scheduling and Management]</div>
@@ -139,7 +139,7 @@ export default function DriverDashboardPage() {
       content: (
         <div className="space-y-4">
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg">Recent Alerts</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg text-foreground">Recent Alerts</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Stay updated with real-time alerts and messages from admins.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border space-y-2">
@@ -158,7 +158,7 @@ export default function DriverDashboardPage() {
       content: (
          <div className="space-y-4">
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg">Contact Support</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg text-foreground">Contact Support</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Reach out to the support team for assistance.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">
@@ -168,14 +168,14 @@ export default function DriverDashboardPage() {
             </CardContent>
           </Card>
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><ShieldAlert className="h-5 w-5"/>Report an Issue</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><ShieldAlert className="h-5 w-5 text-accent"/>Report an Issue</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Report any problems encountered during a trip or with the app.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">[Placeholder: Form to Report an Issue with Category, Description, Attachments]</div>
             </CardContent>
           </Card>
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><HelpCircle className="h-5 w-5"/>FAQs & Help Center</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><HelpCircle className="h-5 w-5 text-accent"/>FAQs & Help Center</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Find answers to common questions.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">
@@ -192,7 +192,7 @@ export default function DriverDashboardPage() {
       content: (
         <div className="space-y-4">
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg">Assigned Vehicle</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg text-foreground">Assigned Vehicle</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Details of the vehicle assigned to you.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">
@@ -203,7 +203,7 @@ export default function DriverDashboardPage() {
             </CardContent>
           </Card>
           <Card className="bg-card/50">
-            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><Settings2 className="h-5 w-5"/>Maintenance Request</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-lg flex items-center gap-2"><Settings2 className="h-5 w-5 text-accent"/>Maintenance Request</CardTitle></CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">Notify administrators about vehicle maintenance requirements or issues.</p>
               <div className="p-3 bg-muted/30 rounded-md text-xs border">
@@ -220,7 +220,7 @@ export default function DriverDashboardPage() {
     <div className="container mx-auto px-4 py-8">
       <Card className="w-full shadow-xl mb-8 bg-card">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-primary">Driver Web UI</CardTitle>
+          <CardTitle className="text-3xl font-bold text-foreground">Driver Web UI</CardTitle>
           <CardDescription>Manage your rides, earnings, and profile.</CardDescription>
         </CardHeader>
       </Card>
@@ -232,7 +232,7 @@ export default function DriverDashboardPage() {
               <AccordionTrigger className="p-6 hover:no-underline">
                 <div className="flex items-center gap-3">
                   {feature.icon}
-                  <span className="text-xl font-semibold text-primary">{feature.title}</span>
+                  <span className="text-xl font-semibold text-foreground">{feature.title}</span>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="p-6 pt-0">

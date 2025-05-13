@@ -15,7 +15,7 @@ export default function RideBookingPage() {
       <div className="flex flex-col items-center justify-center space-y-8 pb-20"> {/* Added padding-bottom */}
         <Card className="w-full max-w-md shadow-xl">
           <CardHeader className="text-center">
-            <CardTitle className="text-3xl font-bold text-primary">Book Your Ride</CardTitle>
+            <CardTitle className="text-3xl font-bold text-foreground">Book Your Ride</CardTitle>
             <CardDescription>Enter your pickup and destination details.</CardDescription>
           </CardHeader>
           <CardContent>
@@ -53,7 +53,7 @@ export default function RideBookingPage() {
             </Tooltip>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogTitle className="text-2xl font-bold text-primary flex items-center gap-2">
+                <DialogTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                   <MessageSquareText className="h-6 w-6 text-green-500" />
                   Chat with RideEase on WhatsApp
                 </DialogTitle>
@@ -99,7 +99,7 @@ export default function RideBookingPage() {
             </Tooltip>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogTitle className="text-2xl font-bold text-primary flex items-center gap-2">
+                <DialogTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                   <Smartphone className="h-6 w-6 text-primary" /> 
                   SMS Notifications
                   </DialogTitle>

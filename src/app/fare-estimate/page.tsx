@@ -7,7 +7,7 @@ export default function FareEstimatePage() {
     <div className="flex flex-col items-center justify-center space-y-8">
       <Card className="w-full max-w-md shadow-xl">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-primary">Estimate Your Fare</CardTitle>
+          <CardTitle className="text-3xl font-bold text-foreground">Estimate Your Fare</CardTitle>
           <CardDescription>Get an estimated cost for your ride.</CardDescription>
         </CardHeader>
         <CardContent>
