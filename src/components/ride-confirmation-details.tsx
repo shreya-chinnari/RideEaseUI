@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-// import { useSearchParams } from 'next/navigation'; // No longer needed
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -21,41 +20,38 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { 
-  MapPin, User, Car, IndianRupee, ShieldAlert, Star, Phone, MessageSquare, Navigation,
-  ArrowLeft, Clock, LifeBuoy, Share2, ShieldCheck, XCircle, AlertTriangle, HelpCircle, Send
+  MapPin, User, Car, ShieldAlert, Star, Phone, MessageSquare, Navigation,
+  ArrowLeft, Clock, LifeBuoy, Share2, ShieldCheck, XCircle, AlertTriangle, HelpCircle
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const mockDriver = {
-  name: 'Rajesh Kumar',
-  avatarUrl: 'https://picsum.photos/seed/driver/100/100',
-  vehicleModel: 'Toyota Etios',
-  vehicleColor: 'White',
-  vehiclePlate: 'KA 01 AB 1234',
-  rating: 4.8,
-  phone: '+91 9876543210',
+  name: 'Sipho Dlamini', // South African name
+  avatarUrl: 'https://picsum.photos/seed/driver_sa/100/100',
+  vehicleModel: 'Toyota Hilux', // Common SA vehicle
+  vehicleColor: 'Silver',
+  vehiclePlate: 'GP 123 XYZ', // Sample SA plate
+  rating: 4.7,
+  phone: '+27 82 123 4567', // Sample SA phone
 };
 
 // Simulate ride status for conditional UI
 type RideStatus = "EN_ROUTE_TO_PICKUP" | "ARRIVED_AT_PICKUP" | "ONGOING" | "COMPLETED" | "CANCELLED";
 
 export default function RideConfirmationDetails() {
-  // const searchParams = useSearchParams(); // No longer needed
   const [currentRating, setCurrentRating] = useState(0);
   const [rideDetails, setRideDetails] = useState({
-    pickup: '123 Main St, Anytown', // Hardcoded sample data
-    destination: '789 Oak Ave, Anytown', // Hardcoded sample data
-    fare: '150', // Hardcoded sample data
-    serviceType: 'Premium', // Hardcoded sample data
+    pickup: '123 Main St, Sandton', 
+    destination: '789 Oak Ave, Rosebank', 
+    fare: '150', 
+    serviceType: 'Premium', 
     estimatedTime: '15 mins', 
     estimatedDistance: '7 km', 
   });
   const [rideStatus, setRideStatus] = useState<RideStatus>("EN_ROUTE_TO_PICKUP"); 
   const [eta, setEta] = useState<string>("5 mins"); 
 
-  // useEffect to simulate ETA updates can remain if needed for dynamic ETA display
   useEffect(() => {
-    // Simulate ETA updates
     const etaInterval = setInterval(() => {
       if (rideStatus !== "COMPLETED" && rideStatus !== "CANCELLED") {
         const randomMinutes = Math.floor(Math.random() * 10) + 1;
@@ -63,7 +59,6 @@ export default function RideConfirmationDetails() {
       }
     }, 15000);
     return () => clearInterval(etaInterval);
-
   }, [rideStatus]);
 
   const handleRating = (rate: number) => {
@@ -73,8 +68,6 @@ export default function RideConfirmationDetails() {
   };
 
   const isRideActive = rideStatus !== "COMPLETED" && rideStatus !== "CANCELLED";
-
-  // Removed loading check: if (!rideDetails.pickup || rideDetails.pickup === 'Not specified')
 
   return (
     <div className="flex flex-col h-full bg-background">
@@ -88,38 +81,16 @@ export default function RideConfirmationDetails() {
         <h1 className="text-lg font-semibold">
           {rideStatus === "COMPLETED" ? "Ride Completed" : rideStatus === "CANCELLED" ? "Ride Cancelled" : "Ride in Progress"}
         </h1>
-        <AlertDialog>
-          <AlertDialogTrigger asChild>
-            <Button variant="destructive" size="icon" className="rounded-full">
-              <ShieldAlert className="h-5 w-5" />
-              <span className="sr-only">SOS</span>
-            </Button>
-          </AlertDialogTrigger>
-          <AlertDialogContent>
-            <AlertDialogHeader>
-              <AlertDialogTitle className="text-destructive flex items-center gap-2">
-                <ShieldAlert className="h-6 w-6" /> Confirm SOS Activation
-              </AlertDialogTitle>
-              <AlertDialogDescription>
-                This will alert emergency contacts and our support team. Use only in genuine emergencies.
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter>
-              <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction className="bg-destructive hover:bg-destructive/90" onClick={() => console.log("SOS Activated!")}>
-                Activate SOS
-              </AlertDialogAction>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
+        {/* SOS button moved to bottom right FAB */}
+        <div className="w-10 h-10"> {/* Placeholder for balance */}</div>
       </header>
 
       {/* Main Scrollable Content Area */}
-      <main className="flex-grow overflow-y-auto pb-28"> {/* Padding for bottom sticky bar */}
+      <main className="flex-grow overflow-y-auto pb-28"> {/* Padding for bottom sticky bar + new SOS FAB */}
         {/* Live Map View */}
         <section className="relative h-[45vh] bg-muted mb-1">
           <Image 
-            src="https://picsum.photos/seed/livemap/1200/600" 
+            src="https://picsum.photos/seed/livemap_sa/1200/600" 
             alt="Live map tracking driver" 
             layout="fill" 
             objectFit="cover"
@@ -131,13 +102,13 @@ export default function RideConfirmationDetails() {
               <span className="text-sm font-medium text-foreground">ETA: {eta}</span>
             </div>
           )}
-           <div className="absolute bottom-1/2 left-1/2 transform -translate-x-1/2 translate-y-1/2"> {/* Your location (example) */}
+           <div className="absolute bottom-1/2 left-1/2 transform -translate-x-1/2 translate-y-1/2">
               <MapPin className="h-8 w-8 text-blue-500 fill-blue-300" />
            </div>
-            <div className="absolute top-1/3 left-1/4"> {/* Driver location (example) */}
+            <div className="absolute top-1/3 left-1/4">
               <Car className="h-10 w-10 text-red-500 transform -rotate-45" />
            </div>
-           <div className="absolute bottom-1/4 right-1/3"> {/* Destination pin (example) */}
+           <div className="absolute bottom-1/4 right-1/3">
              <MapPin className="h-8 w-8 text-green-500 fill-green-300" />
            </div>
         </section>
@@ -213,7 +184,7 @@ export default function RideConfirmationDetails() {
               </div>
               <div>
                 <p className="text-xs text-muted-foreground uppercase">Est. Fare</p>
-                <p className="font-bold text-accent text-lg">₹{rideDetails.fare}</p>
+                <p className="font-bold text-accent text-lg">R{rideDetails.fare}</p>
               </div>
             </div>
           </CardContent>
@@ -313,7 +284,42 @@ export default function RideConfirmationDetails() {
           </Button>
         </div>
       </footer>
+
+      {/* SOS Button FAB */}
+      <div className="fixed bottom-[5rem] right-6 z-30"> {/* Positioned above the footer bar */}
+        <AlertDialog>
+          <AlertDialogTrigger asChild>
+            <Button variant="destructive" className="w-16 h-16 rounded-full shadow-xl p-0 flex items-center justify-center">
+              <ShieldAlert className="h-8 w-8" />
+              <span className="sr-only">SOS</span>
+            </Button>
+          </AlertDialogTrigger>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle className="text-destructive flex items-center gap-2">
+                <ShieldAlert className="h-6 w-6" /> Contacting Emergency Services
+              </AlertDialogTitle>
+              <AlertDialogDescription className="text-left space-y-2 text-sm">
+                <p>Your SOS has been activated. We are attempting to contact your emergency contact and RideEase support.</p>
+                <p className="font-semibold mt-3">Primary Emergency Contact:</p>
+                <ul className="list-none pl-1 space-y-0.5">
+                  <li><strong>Name:</strong> Nomusa Khumalo (Sample)</li>
+                  <li><strong>Phone:</strong> +27 83 987 6543 (Sample)</li>
+                </ul>
+                <p className="mt-2">Your current location and ride details are being shared.</p>
+                <p className="mt-3 text-xs text-muted-foreground">If you are not in a genuine emergency or activated this by mistake, please cancel immediately.</p>
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel onClick={() => console.log("SOS Cancelled by user")}>Cancel SOS</AlertDialogCancel>
+              <AlertDialogAction className="bg-destructive hover:bg-destructive/90" onClick={() => console.log("SOS Confirmed by user. Help is on the way!")}>
+                Confirm Emergency
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
+      </div>
+
     </div>
   );
 }
-
