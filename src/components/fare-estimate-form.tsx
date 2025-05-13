@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useToast } from '@/hooks/use-toast';
 import { useState, useEffect } from 'react';
 import { MapPin, Car, DollarSign } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const fareEstimateSchema = z.object({
   pickup: z.string().min(3, { message: 'Pickup location must be at least 3 characters.' }),
@@ -21,6 +22,7 @@ type FareEstimateFormValues = z.infer<typeof fareEstimateSchema>;
 
 export default function FareEstimateForm() {
   const { toast } = useToast();
+  const router = useRouter();
   const [estimatedFare, setEstimatedFare] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -55,13 +57,17 @@ export default function FareEstimateForm() {
         baseFare = 70;
     }
     const fare = baseFare + distance * 12.5; // 12.5 per km
+    const calculatedFare = Math.round(fare);
     
-    setEstimatedFare(Math.round(fare));
+    setEstimatedFare(calculatedFare);
     setIsLoading(false);
     toast({
       title: 'Fare Estimated!',
-      description: `The estimated fare from ${data.pickup} to ${data.destination} is ₹${Math.round(fare)}.`,
+      description: `The estimated fare from ${data.pickup} to ${data.destination} is ₹${calculatedFare}. Proceed to confirm your ride.`,
     });
+
+    // Navigate to ride confirmation page with details
+    router.push(`/ride-confirmation?pickup=${encodeURIComponent(data.pickup)}&destination=${encodeURIComponent(data.destination)}&fare=${calculatedFare}&serviceType=${encodeURIComponent(data.serviceType)}`);
   }
   
   // useEffect to handle client-side only logic if Math.random() was used outside onSubmit
@@ -125,9 +131,9 @@ export default function FareEstimateForm() {
           )}
         />
         <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-6 shadow-md active:scale-95 transition-transform duration-150 ease-in-out" disabled={isLoading}>
-          {isLoading ? 'Estimating...' : 'Estimate Fare'}
+          {isLoading ? 'Estimating...' : 'Estimate Fare & Proceed'}
         </Button>
-        {estimatedFare !== null && (
+        {estimatedFare !== null && !isLoading && ( // Show only if not loading and fare is set
           <div className="mt-6 p-4 bg-secondary/20 rounded-lg text-center shadow">
             <h3 className="text-lg font-semibold flex items-center justify-center gap-2 text-foreground">
               <DollarSign className="h-6 w-6 text-primary" /> Estimated Fare

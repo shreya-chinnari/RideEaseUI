@@ -4,65 +4,75 @@
 
 @layer base {
   :root {
-    --background: 30 100% 98%; /* Very Light Peach */
-    --foreground: 20 30% 25%; /* Dark Warm Gray */
-    --card: 30 80% 96%; /* Light Peach */
+    --background: 0 0% 100%; /* White */
+    --foreground: 20 30% 25%; /* Dark Warm Gray - User's original */
+    --card: 0 0% 100%; /* White */
     --card-foreground: 20 30% 25%;
-    --popover: 30 80% 96%;
+    --popover: 0 0% 100%;
     --popover-foreground: 20 30% 25%;
-    --primary: 195 85% 45%; /* Vibrant Cerulean Blue */
-    --primary-foreground: 0 0% 100%; /* White */
-    --secondary: 30 90% 60%; /* Bright Orange */
-    --secondary-foreground: 30 90% 10%; /* Dark Brown for contrast */
-    --muted: 30 30% 93%; /* Lighter Peach Gray */
-    --muted-foreground: 30 15% 50%; /* Muted Warm Gray */
-    --accent: 330 80% 60%; /* Lively Pink/Rose */
-    --accent-foreground: 0 0% 100%; /* White */
+    
+    --primary: 195 85% 45%; /* Vibrant Cerulean Blue - User's existing */
+    --primary-foreground: 0 0% 100%; /* White - User's existing */
+    --secondary: 30 90% 60%; /* Bright Orange - User's existing */
+    --secondary-foreground: 30 90% 10%; /* Dark Brown for contrast - User's existing */
+    
+    --muted: 220 15% 96.1%; /* Light Cool Gray */
+    --muted-foreground: 220 10% 46.9%; /* Muted Cool Gray */
+    
+    --accent: 330 80% 60%; /* Lively Pink/Rose - User's existing */
+    --accent-foreground: 0 0% 100%; /* White - User's existing */
+    
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 30 30% 88%; /* Soft Peach Gray Border */
-    --input: 30 50% 97%; /* Slightly off from background for inputs */
-    --ring: 195 85% 50%; /* Cerulean Blue for focus rings */
     
-    --chart-1: 195 85% 55%; /* Lighter Cerulean Blue */
-    --chart-2: 330 80% 65%;  /* Lighter Pink/Rose */
-    --chart-3: 50 95% 60%;  /* Bright Yellow */
-    --chart-4: 140 60% 50%; /* Emerald Green */
-    --chart-5: 270 70% 65%;  /* Soft Purple */
+    --border: 220 15% 88%; /* Cool Gray Border */
+    --input: 220 15% 93%; /* Slightly darker cool gray for input */
+    --ring: 195 85% 50%; /* Cerulean Blue for focus rings - User's existing */
+    
+    --chart-1: 195 85% 55%;
+    --chart-2: 330 80% 65%;
+    --chart-3: 50 95% 60%;
+    --chart-4: 140 60% 50%;
+    --chart-5: 270 70% 65%;
     
     --radius: 0.5rem;
 
     /* Sidebar variables */
-    --sidebar-background: 30 80% 95%; /* Light Peach (slightly adjusted from card for potential distinction) */
+    --sidebar-background: 0 0% 98%; /* Very light gray, almost white */
     --sidebar-foreground: 20 30% 25%; 
     --sidebar-primary: 195 85% 45%; 
     --sidebar-primary-foreground: 0 0% 100%; 
     --sidebar-accent: 330 80% 60%; 
     --sidebar-accent-foreground: 0 0% 100%; 
-    --sidebar-border: 30 30% 85%; 
+    --sidebar-border: 220 15% 85%; 
     --sidebar-ring: 195 85% 50%; 
   }
 
   .dark {
-    --background: 220 20% 10%; /* Dark Slate Blue/Gray */
-    --foreground: 30 30% 90%; /* Light Warm Gray text */
-    --card: 220 20% 14%; /* Darker card */
+    --background: 220 20% 10%; /* Dark Slate Blue/Gray - User's existing */
+    --foreground: 30 30% 90%; /* Light Warm Gray text - User's existing */
+    --card: 220 20% 14%; /* Darker card - User's existing */
     --card-foreground: 30 30% 90%;
     --popover: 220 20% 14%;
     --popover-foreground: 30 30% 90%;
-    --primary: 195 80% 65%; /* Lighter Cerulean Blue */
-    --primary-foreground: 195 80% 10%; /* Dark Blue for contrast */
-    --secondary: 30 85% 70%; /* Softer Orange */
-    --secondary-foreground: 30 85% 15%; /* Darker Orange/Brown for contrast */
-    --muted: 220 15% 22%; /* Darker muted blue-gray */
-    --muted-foreground: 30 15% 65%; /* Muted light warm gray */
-    --accent: 330 75% 70%; /* Lighter Pink/Rose */
-    --accent-foreground: 330 75% 15%; /* Dark Pink/Rose for contrast */
+
+    --primary: 195 80% 65%; /* Lighter Cerulean Blue - User's existing */
+    --primary-foreground: 195 80% 10%; /* Dark Blue for contrast - User's existing */
+    --secondary: 30 85% 70%; /* Softer Orange - User's existing */
+    --secondary-foreground: 30 85% 15%; /* Darker Orange/Brown for contrast - User's existing */
+
+    --muted: 220 15% 22%; /* Darker muted blue-gray - User's existing */
+    --muted-foreground: 30 15% 65%; /* Muted light warm gray - User's existing */
+    
+    --accent: 330 75% 70%; /* Lighter Pink/Rose - User's existing */
+    --accent-foreground: 330 75% 15%; /* Dark Pink/Rose for contrast - User's existing */
+    
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 15% 25%; /* Darker border */
-    --input: 220 15% 18%;  /* Darker input */
-    --ring: 195 80% 65%; /* Lighter Cerulean Blue for focus rings */
+    
+    --border: 220 15% 25%; /* Darker border - User's existing */
+    --input: 220 15% 18%;  /* Darker input - User's existing */
+    --ring: 195 80% 65%; /* Lighter Cerulean Blue for focus rings - User's existing */
 
     --chart-1: 195 80% 70%; 
     --chart-2: 330 75% 75%;
