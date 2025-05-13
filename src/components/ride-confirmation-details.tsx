@@ -134,7 +134,7 @@ export default function RideConfirmationDetails() {
           <CardContent className="space-y-3">
             <div className="text-sm text-muted-foreground space-y-1">
               <p className="flex items-center gap-2"><Car className="h-4 w-4 text-primary" />{mockDriver.vehicleModel} ({mockDriver.vehicleColor})</p>
-              <p><Badge variant="secondary" className="text-xs">{mockDriver.vehiclePlate}</Badge></p>
+              <div><Badge variant="secondary" className="text-xs">{mockDriver.vehiclePlate}</Badge></div>
             </div>
             <div className="flex space-x-2 pt-1">
               <Button variant="outline" className="flex-1 border-highlight-green text-highlight-green hover:bg-highlight-green hover:text-accent-foreground" asChild>
