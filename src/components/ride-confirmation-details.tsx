@@ -6,7 +6,17 @@ import { useSearchParams } from 'next/navigation';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/alert-dialog'; // Using AlertDialog for SOS
+import { 
+  AlertDialog, 
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent, 
+  AlertDialogDescription, 
+  AlertDialogFooter, 
+  AlertDialogHeader, 
+  AlertDialogTitle, 
+  AlertDialogTrigger 
+} from '@/components/ui/alert-dialog'; // Using AlertDialog for SOS
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { MapPin, User, Car, IndianRupee, ShieldAlert, Star, Phone, MessageSquare, Navigation } from 'lucide-react';
@@ -52,7 +62,7 @@ export default function RideConfirmationDetails() {
     console.log(`Rated ${rate} stars`);
   };
 
-  if (!rideDetails.pickup) {
+  if (!rideDetails.pickup || rideDetails.pickup === 'Not specified') {
     // Or a more sophisticated loading state
     return <div className="text-center p-8">Loading ride details...</div>;
   }
@@ -167,31 +177,31 @@ export default function RideConfirmationDetails() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <Dialog>
-              <DialogTrigger asChild>
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
                 <Button variant="destructive" className="w-full text-lg py-3">
                   <ShieldAlert className="h-5 w-5 mr-2" /> Activate SOS
                 </Button>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle className="text-destructive flex items-center gap-2">
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle className="text-destructive flex items-center gap-2">
                      <ShieldAlert className="h-6 w-6" /> Confirm SOS Activation
-                  </DialogTitle>
-                  <DialogDescription>
+                  </AlertDialogTitle>
+                  <AlertDialogDescription>
                     Are you sure you want to activate the SOS feature? This will alert your emergency contacts and our support team immediately.
-                  </DialogDescription>
-                </DialogHeader>
-                <DialogFooter className="sm:justify-start">
-                  <Button type="button" variant="destructive" onClick={() => console.log("SOS Activated!")}>
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter className="sm:justify-start">
+                  <AlertDialogAction onClick={() => console.log("SOS Activated!")}>
                     Yes, Activate SOS
-                  </Button>
-                  <Button type="button" variant="outline" onClick={() => console.log("SOS Cancelled")}>
+                  </AlertDialogAction>
+                  <AlertDialogCancel onClick={() => console.log("SOS Cancelled")}>
                      Cancel 
-                  </Button>
-                </DialogFooter>
-              </DialogContent>
-            </Dialog>
+                  </AlertDialogCancel>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
             <p className="text-xs text-muted-foreground mt-2 text-center">Use only in case of a genuine emergency.</p>
           </CardContent>
         </Card>
