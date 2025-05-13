@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+// import { useSearchParams } from 'next/navigation'; // No longer needed
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -40,28 +40,21 @@ const mockDriver = {
 type RideStatus = "EN_ROUTE_TO_PICKUP" | "ARRIVED_AT_PICKUP" | "ONGOING" | "COMPLETED" | "CANCELLED";
 
 export default function RideConfirmationDetails() {
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams(); // No longer needed
   const [currentRating, setCurrentRating] = useState(0);
   const [rideDetails, setRideDetails] = useState({
-    pickup: '',
-    destination: '',
-    fare: '',
-    serviceType: '',
-    estimatedTime: '15 mins', // Mock
-    estimatedDistance: '7 km', // Mock
+    pickup: '123 Main St, Anytown', // Hardcoded sample data
+    destination: '789 Oak Ave, Anytown', // Hardcoded sample data
+    fare: '150', // Hardcoded sample data
+    serviceType: 'Premium', // Hardcoded sample data
+    estimatedTime: '15 mins', 
+    estimatedDistance: '7 km', 
   });
-  const [rideStatus, setRideStatus] = useState<RideStatus>("EN_ROUTE_TO_PICKUP"); // Mock status
-  const [eta, setEta] = useState<string>("5 mins"); // Mock ETA
+  const [rideStatus, setRideStatus] = useState<RideStatus>("EN_ROUTE_TO_PICKUP"); 
+  const [eta, setEta] = useState<string>("5 mins"); 
 
+  // useEffect to simulate ETA updates can remain if needed for dynamic ETA display
   useEffect(() => {
-    setRideDetails(prev => ({
-      ...prev,
-      pickup: searchParams.get('pickup') || 'Not specified',
-      destination: searchParams.get('destination') || 'Not specified',
-      fare: searchParams.get('fare') || 'N/A',
-      serviceType: searchParams.get('serviceType') || 'Standard',
-    }));
-
     // Simulate ETA updates
     const etaInterval = setInterval(() => {
       if (rideStatus !== "COMPLETED" && rideStatus !== "CANCELLED") {
@@ -71,7 +64,7 @@ export default function RideConfirmationDetails() {
     }, 15000);
     return () => clearInterval(etaInterval);
 
-  }, [searchParams, rideStatus]);
+  }, [rideStatus]);
 
   const handleRating = (rate: number) => {
     setCurrentRating(rate);
@@ -81,9 +74,7 @@ export default function RideConfirmationDetails() {
 
   const isRideActive = rideStatus !== "COMPLETED" && rideStatus !== "CANCELLED";
 
-  if (!rideDetails.pickup || rideDetails.pickup === 'Not specified') {
-    return <div className="text-center p-8 text-muted-foreground">Loading ride details...</div>;
-  }
+  // Removed loading check: if (!rideDetails.pickup || rideDetails.pickup === 'Not specified')
 
   return (
     <div className="flex flex-col h-full bg-background">
@@ -325,3 +316,4 @@ export default function RideConfirmationDetails() {
     </div>
   );
 }
+
