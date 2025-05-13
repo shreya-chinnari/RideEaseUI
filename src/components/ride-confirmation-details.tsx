@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -90,7 +91,7 @@ export default function RideConfirmationDetails() {
         {/* Live Map View */}
         <section className="relative h-[45vh] bg-muted mb-1">
           <Image 
-            src="https://picsum.photos/seed/livemap_sa/1200/600" 
+            src="https://picsum.photos/seed/map_route_active/1200/600" 
             alt="Live map tracking driver" 
             layout="fill" 
             objectFit="cover"
@@ -323,3 +324,4 @@ export default function RideConfirmationDetails() {
     </div>
   );
 }
+
