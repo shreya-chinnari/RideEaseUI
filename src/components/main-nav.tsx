@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { CarFront, Calculator, History, LayoutDashboard, UserCircle, CheckCircle } from 'lucide-react';
+import { CarFront, Calculator, History, LayoutDashboard, UserCircle, CheckCircle, ShieldQuestion } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
@@ -14,17 +14,22 @@ const navItems = [
   { href: '/ride-confirmation', label: 'Ride Confirmation', icon: CheckCircle },
   { href: '/admin/dashboard', label: 'Admin', icon: LayoutDashboard },
   { href: '/driver/dashboard', label: 'Driver UI', icon: UserCircle },
+  { href: '/kyc/customer', label: 'Customer KYC', icon: ShieldQuestion },
+  { href: '/kyc/driver', label: 'Driver KYC', icon: ShieldQuestion },
 ];
 
 export function MainNav() {
   const pathname = usePathname();
-  const activeTab = navItems.find(item => pathname === item.href || (pathname.startsWith(item.href) && item.href !== '/'))?.href || pathname;
+  // Ensure that a base path like /kyc also activates the first relevant KYC tab.
+  const activeTab = navItems.find(item => pathname === item.href || (pathname.startsWith(item.href) && item.href !== '/'))?.href || 
+                    (pathname.startsWith('/kyc/customer') ? '/kyc/customer' : 
+                     pathname.startsWith('/kyc/driver') ? '/kyc/driver' : pathname);
 
 
   return (
     <nav className="sticky top-16 z-30 w-full border-b bg-background shadow-sm">
       <Tabs value={activeTab} className="w-full">
-        <TabsList className="grid w-full grid-cols-3 sm:grid-cols-6 rounded-none h-auto p-0">
+        <TabsList className="grid w-full grid-cols-4 sm:grid-cols-8 rounded-none h-auto p-0">
           {navItems.map((item) => (
             <TabsTrigger
               key={item.href}
